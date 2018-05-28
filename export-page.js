@@ -43,32 +43,15 @@ H5P.ExportPage = (function ($, EventDispatcher) {
   function ExportPage(header, $body, enableSubmit, submitTextLabel, submitSuccessTextLabel, selectAllTextLabel, exportTextLabel, templatePath, templateContent) {
     EventDispatcher.call(this);
     var self = this;
-    this.enableSubmit = enableSubmit;
 
     this.templatePath = templatePath;
     this.templateContent = templateContent;
 
     // Standard labels:
-    var standardSelectAllTextLabel = 'Select';
-    var standardExportTextLabel = 'Export';
-    var standardSubmitTextLabel = 'Submit'
-    self.standardSubmitSuccessTextLabel = 'Your report has been successfully submitted!';
-
-    if (selectAllTextLabel !== undefined) {
-      standardSelectAllTextLabel = selectAllTextLabel;
-    }
-
-    if (exportTextLabel !== undefined) {
-      standardExportTextLabel = exportTextLabel;
-    }
-
-    if (submitTextLabel !== undefined) {
-      standardSubmitTextLabel = submitTextLabel;
-    }
-
-    if (submitSuccessTextLabel !== undefined) {
-      self.standardSubmitSuccessTextLabel = submitSuccessTextLabel;
-    }
+    var standardSelectAllTextLabel = selectAllTextLabel || 'Select';
+    var standardExportTextLabel = exportTextLabel || 'Export';
+    var standardSubmitTextLabel = submitTextLabel || 'Submit';
+    self.standardSubmitSuccessTextLabel = submitSuccessTextLabel || 'Your report was submitted successfully!';
 
     var exportPageTemplate =
       '<div class="joubel-create-document" role="dialog">' +
@@ -84,7 +67,7 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       '     <button class="joubel-exportable-export-button" title="' + standardExportTextLabel + '" tabindex="1">' +
       '       <span>' + standardExportTextLabel + '</span>' +
       '     </button>' +
-            (this.enableSubmit ?
+            (enableSubmit ?
       '     <button class="joubel-exportable-submit-button" title="' + standardSubmitTextLabel + '" tabindex="1">' +
       '       <span>' + standardSubmitTextLabel + '</span>' +
       '     </button>'
