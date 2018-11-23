@@ -60,7 +60,7 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       '     <div class="joubel-exportable-header-text" tabindex="-1">' +
       '       <span>' + header + '</span>' +
       '     </div>' +
-      '     <button class="joubel-export-page-close" title="Exit" tabindex="3"></button>' +
+      '     <button class="joubel-export-page-close" title="Exit" aria-label="Exit" tabindex="3"></button>' +
       '     <button class="joubel-exportable-copy-button" title ="' + standardSelectAllTextLabel + '" tabindex="2">' +
       '       <span>' + standardSelectAllTextLabel + '</span>' +
       '     </button>' +
