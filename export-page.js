@@ -60,7 +60,7 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       '     <div class="joubel-exportable-header-text" tabindex="-1">' +
       '       <span>' + header + '</span>' +
       '     </div>' +
-      '     <button class="joubel-export-page-close" title="Exit" tabindex="3"></button>' +
+      '     <button class="joubel-export-page-close" title="Exit" aria-label="Exit" tabindex="3"></button>' +
       '     <button class="joubel-exportable-copy-button" title ="' + standardSelectAllTextLabel + '" tabindex="2">' +
       '       <span>' + standardSelectAllTextLabel + '</span>' +
       '     </button>' +
@@ -68,10 +68,10 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       '       <span>' + standardExportTextLabel + '</span>' +
       '     </button>' +
             (enableSubmit ?
-      '     <button class="joubel-exportable-submit-button" title="' + standardSubmitTextLabel + '" tabindex="1">' +
+              '     <button class="joubel-exportable-submit-button" title="' + standardSubmitTextLabel + '" tabindex="1">' +
       '       <span>' + standardSubmitTextLabel + '</span>' +
       '     </button>'
-             : '') +
+              : '') +
       '   </div>' +
       ' </div>' +
       ' <div class="joubel-exportable-body">' +
@@ -223,7 +223,8 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       range = document.body.createTextRange();
       range.moveToElementText(text);
       range.select();
-    } else if (window.getSelection) {
+    }
+    else if (window.getSelection) {
       selection = window.getSelection();
       range = document.createRange();
       range.selectNodeContents(text);
@@ -304,7 +305,8 @@ H5P.ExportPage = (function ($, EventDispatcher) {
       if (self.$successDiv) {
         self.$successDiv.addClass('joubel-narrow-view');
       }
-    } else {
+    }
+    else {
       self.$inner.removeClass('responsive');
       $innerTmp.remove();
 
@@ -321,7 +323,8 @@ H5P.ExportPage = (function ($, EventDispatcher) {
 
     if (headerWidth <= dynamicRemoveTitleThreshold) {
       self.$inner.addClass('no-title');
-    } else {
+    }
+    else {
       self.$inner.removeClass('no-title');
     }
 
