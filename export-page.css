@@ -67,6 +67,11 @@
 /* Hover effects on buttons */
 .joubel-create-document .joubel-exportable-header-inner button:hover {
   color: #333;
+  background-color: #e8e8e8;
+}
+
+.joubel-create-document .joubel-exportable-header-inner button:active {
+  background-color: #d4d4d4;
 }
 
 .joubel-create-document .joubel-exportable-header-inner button.joubel-export-page-close {
