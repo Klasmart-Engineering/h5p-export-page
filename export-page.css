@@ -1,5 +1,6 @@
 /* ------------------------------ popup main container ---------------------- */
 .joubel-create-document {
+  font-family: 'Roboto', sans-serif;
   position: absolute;
   width: 100%;
   left: 0;
